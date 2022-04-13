@@ -31,30 +31,6 @@ public class Car {
         this.carColor = carColor;
     }
 
-    public User getOwner() {
-        return owner;
-    }
-
-    public void setOwner(User owner) {
-        this.owner = owner;
-    }
-
-    public String getCarModel() {
-        return carModel;
-    }
-
-    public void setCarModel(String carModel) {
-        this.carModel = carModel;
-    }
-
-    public String getCarColor() {
-        return carColor;
-    }
-
-    public void setCarColor(String carColor) {
-        this.carColor = carColor;
-    }
-
     public Long getCarId() {
         return carId;
     }
@@ -71,12 +47,28 @@ public class Car {
         this.carBrand = carBrand;
     }
 
-    public String getModel() {
+    public String getCarModel() {
         return carModel;
     }
 
-    public void setModel(String model) {
-        this.carModel = model;
+    public void setCarModel(String carModel) {
+        this.carModel = carModel;
+    }
+
+    public int getCarYear() {
+        return carYear;
+    }
+
+    public void setCarYear(int carYear) {
+        this.carYear = carYear;
+    }
+
+    public String getCarColor() {
+        return carColor;
+    }
+
+    public void setCarColor(String carColor) {
+        this.carColor = carColor;
     }
 
     public String getCarDesc() {
@@ -87,11 +79,11 @@ public class Car {
         this.carDesc = carDesc;
     }
 
-    public int getCarYear() {
-        return carYear;
+    public User getOwner() {
+        return owner;
     }
 
-    public void setCarYear(int carYear) {
-        this.carYear = carYear;
+    public void setOwner(User owner) {
+        this.owner = owner;
     }
 }

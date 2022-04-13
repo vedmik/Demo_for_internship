@@ -8,9 +8,9 @@
 
             <a class="me-3 py-2 text-dark text-decoration-none" href="/">Головна</a>
             <a class="me-3 py-2 text-dark text-decoration-none" href="/garage">Гараж</a>
-            <a class="me-3 py-2 text-dark text-decoration-none" href="/garage/edit">Налаштувати гараж</a>
-            <form th:action="@{/logout}" method="post">
-                <input class="py-2 text-white text-decoration-none btn btn-dark" type="submit" value="Вийти"/>
+            <p class="me-3 py-2 text-dark text-decoration-none" th:text="${user == null ? 'Увійти ->' : user.username}"/>
+            <form th:action="${user == null ? '/login' : '/logout'}" method="post">
+                <input class="py-2 text-white text-decoration-none btn btn-dark" type="submit"  th:value="${user == null ? 'Увійти' : 'Вийти'}"/>
             </form>
         </nav>
     </div>
