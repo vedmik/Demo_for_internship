@@ -11,11 +11,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import ua.coparts.demo.Exception.ResourceNotFoundException;
 import ua.coparts.demo.models.Car;
 import ua.coparts.demo.models.FuelPoint;
+import ua.coparts.demo.models.MyReverseComparator;
 import ua.coparts.demo.models.User;
 import ua.coparts.demo.repo.CarRepository;
 import ua.coparts.demo.repo.FuelPointRepository;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,6 +39,7 @@ public class FuelPointsController {
         ArrayList<Car> res = new ArrayList<>();
         findCarInDB.ifPresent(res :: add);
         List<FuelPoint> fuelPoints = fuelPointRepository.findByCarId(res.get(0));
+        Collections.sort(fuelPoints, new MyReverseComparator());
         model.addAttribute("fuel", fuelPoints);
         model.addAttribute("user", user);
         model.addAttribute("car", res);

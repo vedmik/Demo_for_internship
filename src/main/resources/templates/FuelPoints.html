@@ -33,13 +33,15 @@
                 <table class="table">
                     <thead>
                     <tr>
+                        <th scope="col"></th>
                         <th scope="col">Показник одометра, км</th>
                         <th scope="col">Кількість палива, л</th>
                         <th scope="col">Вартість заправки, грн</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr th:each="el : ${fuel}">
+                    <tr th:each="el, stats : ${fuel}">
+                        <th><span th:text="${stats.index + 1}">1</span></th>
                         <td><span th:text="${el.odometer}"> км </span></td>
                         <td><span th:text="${el.refueling}"> л </span></td>
                         <td><span th:text="${el.price}"> грн </span></td>

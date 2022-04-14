@@ -18,7 +18,7 @@
                     <a th:href="'/garage/car_' + ${el.carId} + '/edit'" class="btn btn-warning mr-2">Редагувати</a>
                     <form th:action="'/garage/car_' + ${el.carId} + '/remove'" method="post">
                         <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-                        <button class="btn btn-warning ml-2" type="submit">Видалити</button>
+                        <button class="btn btn-warning mr-2" type="submit">Видалити</button>
                     </form>
                 </div>
             </div>
