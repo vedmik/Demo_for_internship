@@ -13,11 +13,14 @@
             <div th:each="el : ${cars}" class="alert alert-info mt-2">
                 <h3 th:text="${el.carBrand}"/>
                 <p th:text="${el.carDesc}"/>
+                <a th:href="'/garage/car_' + ${el.carId}" class="btn btn-warning">Статистика заправок</a>
                 <div class="btn-group" role="group">
-                    <b style="float:left mr-3">Власник:</b>
-                    <p th:text="${el.owner.username}"/>
+                    <a th:href="'/garage/car_' + ${el.carId} + '/edit'" class="btn btn-warning mr-2">Редагувати</a>
+                    <form th:action="'/garage/car_' + ${el.carId} + '/remove'" method="post">
+                        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                        <button class="btn btn-warning ml-2" type="submit">Видалити</button>
+                    </form>
                 </div>
-                <a th:href="'/garage/car_' + ${el.carId}" class="btn btn-warning">Детальніше</a>
             </div>
 
         </div>

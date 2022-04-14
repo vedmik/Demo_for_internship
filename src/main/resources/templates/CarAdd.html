@@ -13,8 +13,7 @@
             <form action="/garage/addCar" method="post">
                 <input type="text" name="carBrand" placeholder="Марка Авто" class="form-control mb-2"/>
                 <input type="text" name="carModel" placeholder="Модель Авто" class="form-control mb-2"/>
-                <input type="text" name="carYear" placeholder="Рік випуску" class="form-control mb-2"/>
-                <input type="text" name="carColor" placeholder="Колір авто" class="form-control mb-2"/>
+                <input type="number" name="carYear" placeholder="Рік випуску" class="form-control mb-2"/>
                 <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
                 <textarea type="text" name="carDesc" placeholder="Опис авто" class="form-control mb-2"></textarea>
                 <button type="submit" class="btm btn-success">Додати авто</button>

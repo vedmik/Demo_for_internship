@@ -14,8 +14,7 @@
                 <form method="post">
                     <input type="text" th:value="${el.carBrand}" name="carBrand" placeholder="Марка авто" class="form-control mb-2"/>
                     <input type="text" th:value="${el.carModel}" name="carModel" placeholder="Модель авто" class="form-control mb-2"/>
-                    <input type="text" th:value="${el.carYear}" name="carYear" placeholder="Рік випуску" class="form-control mb-2"/>
-                    <input type="text" th:value="${el.carColor}" name="carColor" placeholder="Рік випуску" class="form-control mb-2"/>
+                    <input type="number" th:value="${el.carYear}" name="carYear" placeholder="Рік випуску" class="form-control mb-2"/>
                     <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
                     <textarea type="text" name="carDesc" placeholder="опис Авто" class="form-control mb-2" th:text="${el.carDesc}"/>
                     <button type="submit" class="btm btn-success">Оновити дані по авто</button>

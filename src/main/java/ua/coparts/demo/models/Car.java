@@ -3,7 +3,7 @@ package ua.coparts.demo.models;
 import javax.persistence.*;
 
 @Entity
-public class Car {
+public class Car{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -12,7 +12,6 @@ public class Car {
     private String carBrand;
     private String carModel;
     private int carYear;
-    private String carColor;
     private String carDesc;
 
     @ManyToOne(fetch = FetchType.EAGER)
@@ -22,13 +21,12 @@ public class Car {
     public Car() {
     }
 
-    public Car(String carBrand, String carModel, int carYear, String carColor, String carDesc, User user) {
+    public Car(String carBrand, String carModel, int carYear, String carDesc, User user) {
         this.owner = user;
         this.carBrand = carBrand;
         this.carModel = carModel;
         this.carDesc = carDesc;
         this.carYear = carYear;
-        this.carColor = carColor;
     }
 
     public Long getCarId() {
@@ -63,13 +61,6 @@ public class Car {
         this.carYear = carYear;
     }
 
-    public String getCarColor() {
-        return carColor;
-    }
-
-    public void setCarColor(String carColor) {
-        this.carColor = carColor;
-    }
 
     public String getCarDesc() {
         return carDesc;
