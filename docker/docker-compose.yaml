@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+  garage_mysql:
+    image: mysql:8.0.24
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: "garage_database"
+      MYSQL_USER: "garage_user"
+      MYSQL_PASSWORD: "garage_password"
+    ports: [ "3316:3306" ]
+    healthcheck:
+      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
+      start_period: 1s
+      interval: 1s
+      timeout: 5s
+      retries: 99
+    volumes:
+      - garage_mysql_volume:/var/lib/mysql
+volumes:
+  garage_mysql_volume:
